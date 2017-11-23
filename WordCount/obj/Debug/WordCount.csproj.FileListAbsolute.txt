@@ -1,7 +1,6 @@
 D:\projects\Git\WordCount\WordCount\bin\Debug\WordCount.exe.config
 D:\projects\Git\WordCount\WordCount\bin\Debug\WordCount.exe
 D:\projects\Git\WordCount\WordCount\bin\Debug\WordCount.pdb
-D:\projects\Git\WordCount\WordCount\obj\Debug\WordCount.csprojResolveAssemblyReference.cache
 D:\projects\Git\WordCount\WordCount\obj\Debug\WordCount.csproj.CoreCompileInputs.cache
 D:\projects\Git\WordCount\WordCount\obj\Debug\WordCount.exe
 D:\projects\Git\WordCount\WordCount\obj\Debug\WordCount.pdb

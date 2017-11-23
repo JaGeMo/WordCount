@@ -42,8 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CountStrings.cs" />
+    <Compile Include="SplitString.cs" />
+    <Compile Include="StopWords.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UIInput.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -2,11 +2,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WordCount;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace UnitTests
 {
     [TestClass]
-    public class TestSplitMethod
+    public class T_SplitString
     {
         [TestMethod]
         public void TestMethodSplit()
@@ -14,40 +15,42 @@ namespace UnitTests
             // arrange
 
             // act
-            string[] testSplit = SplitString.stringSplitted("tests tests");
-            var testArray = new string[] { "tests", "tests" };
+            List<string> testSplit = SplitString.StringSplitted("tests tests");
+            var testArray = new List<string>{ "tests", "tests" };
             // assert
             CollectionAssert.AreEqual(testArray,testSplit);
         }
     }
 
     [TestClass]
-    public class TestCountMethod
+    public class T_CountStrings
     {
         [TestMethod]
-        public void TestMethodCount()
+        public void CountStrings_StringsCountFromList()
         {
             // arrange
-            var testArray = new string[] { "one", "two", "three" };
+            var testStringList = new List<string>{ "one", "two", "three" };
             // act
-            int counter = CountStrings.stringsCount(testArray);
+            int counter = CountStrings.StringsCountFromList(testStringList);
             // assert
             Assert.AreEqual(counter,3);
         }
     }
 
     [TestClass]
-    public class TestSplitMethodSecond
+    public class T_StopWords
     {
         [TestMethod]
-        public void TestMethodSplitSecond()
+        public void StopWords_ReturnCleansedString()
         {
             // arrange
-            var testArray = new string[] { "one", "two", "three" };
+            var blackList = new string[] { "a", "b" };
+            var in_RawList = new List<string> { "a", "b", "c" };
+            var cleansedList = new List<string> { "c" };
             // act
-            string[] testSplit = SplitString.stringSplitted("one two three");
+            List<string> resultList = StopWords.ReturnCleansedString(blackList, in_RawList);
             // assert
-            Assert.IsTrue(testArray.SequenceEqual(testSplit));
+            CollectionAssert.Equals(resultList,cleansedList);
         }
     }
 
