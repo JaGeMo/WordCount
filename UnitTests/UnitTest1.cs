@@ -15,7 +15,7 @@ namespace UnitTests
 
             // act
             string[] testSplit = SplitString.stringSplitted("tests tests");
-            string[] testArray = new string[] { "tests", "tests" };
+            var testArray = new string[] { "tests", "tests" };
             // assert
             CollectionAssert.AreEqual(testArray,testSplit);
         }
@@ -28,7 +28,7 @@ namespace UnitTests
         public void TestMethodCount()
         {
             // arrange
-            string[] testArray = new string[] { "one", "two", "three" };
+            var testArray = new string[] { "one", "two", "three" };
             // act
             int counter = CountStrings.stringsCount(testArray);
             // assert
@@ -43,7 +43,7 @@ namespace UnitTests
         public void TestMethodSplitSecond()
         {
             // arrange
-            string[] testArray = new string[] { "one", "two", "three" };
+            var testArray = new string[] { "one", "two", "three" };
             // act
             string[] testSplit = SplitString.stringSplitted("one two three");
             // assert

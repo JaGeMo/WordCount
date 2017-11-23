@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Text;
 using System.Text.RegularExpressions;
 
 
@@ -8,46 +11,49 @@ namespace WordCount
     {
         static void Main(string[] args)
         {
-            //// first try
-            //const string t1 = "To be or not to be, that is the question.";
-            //Console.WriteLine("first try (fixed string): To be or not to be, that is the question.");
-            //Console.WriteLine(DirectWordCounting.CountWords(t1));
-            //// second try
-            //Console.WriteLine("second try / enter new string: ");
-            //string t2 = Console.ReadLine();
-            //Console.WriteLine(DirectWordCounting.CountWords(t2));
-
-
             // third try
-            Console.WriteLine("third try / enter new string to split: ");
-            string t3 = Console.ReadLine();
+            var t3 = UIInput.ReturnStringFromInput();
+            t3 = RemoveSpecialCharacters.stringCleansed(t3);
             string[] resultArray = SplitString.stringSplitted(t3);
-            int count = CountStrings.stringsCount(resultArray);
-            Console.WriteLine("number of words: " + count.ToString());
+            int counter = CountStrings.stringsCount(resultArray);
+            string cleansedString = RemoveSpecialCharacters.stringCleansed(t3);
+            UIOutput.ReturnStringToOutput(counter);
             Console.ReadLine();
         }
     }
-    
-    //public static class DirectWordCounting
-    //{
-    //    public static int CountWords(string s)
-    //    {
-    //        MatchCollection collection = Regex.Matches(s, @"[\S]+");
-    //        return collection.Count;
-    //    }
 
-    //}
-    
+    public static class UIInput
+    {
+        private static string result; 
+
+        public static string ReturnStringFromInput()
+        {
+            Console.WriteLine("third try / enter new string to split: ");
+            return result = Console.ReadLine();
+        }
+
+    }
+
+    public static class UIOutput
+    {
+        private static string result;
+
+        public static void ReturnStringToOutput(int in_Int)
+        {
+            Console.WriteLine("words count: " + in_Int);
+        }
+
+    }
+
     public static class SplitString
     {
         private static string[] resultArray;
 
-        public static string[] stringSplitted( string in_String)
+        public static string[] stringSplitted(string in_String)
         {
             string[] resultArray = in_String.Split(' ');
             return resultArray;
         }
-
     }
 
     public static class CountStrings
@@ -63,7 +69,17 @@ namespace WordCount
             
             return result;
         }
+
     }
 
+    public static class RemoveSpecialCharacters
+    {
+        private static string resultString;
+
+        public static string stringCleansed(string in_String)
+        {
+             return resultString = (Regex.Replace(in_String, "[^a-zA-Z ]+", "")).TrimEnd();
+        }
+    }
 
 }
