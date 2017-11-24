@@ -9,10 +9,13 @@ namespace WordCount
     {
         static void Main(string[] args)
         {
-            string[] blackList = StopWords.ReadBlackListWords();
-            var t3 = UIInput.ReturnStringFromInput();
-            var rawList = SplitString.StringSplitted(t3);
-            var cleansedList = StopWords.ReturnCleansedString(blackList, rawList);
+            var blackList = StopWords.ReadBlackListWords();
+
+            var inputString = UIInput.ReturnStringFromInput();
+
+            var splitList = SplitString.StringSplitted(inputString);
+
+            var cleansedList = StopWords.ReturnCleansedString(blackList, splitList);
 
             Console.WriteLine(CountStrings.StringsCountFromList(cleansedList));
         }

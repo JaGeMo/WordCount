@@ -3,6 +3,12 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+
+*.dll
+*.pdb
+*.exe
+*.cache
+
 # User-specific files
 *.suo
 *.user
@@ -71,4 +77,3 @@ artifacts/
 *.pdb
 *.exe
 *.cache
-
