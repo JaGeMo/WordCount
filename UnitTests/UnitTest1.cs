@@ -15,7 +15,7 @@ namespace UnitTests
             // arrange
 
             // act
-            List<string> testSplit = SplitString.StringSplitted("tests tests");
+            List<string> testSplit = Splitter.SplitString("tests tests");
             var testArray = new List<string>{ "tests", "tests" };
             // assert
             CollectionAssert.AreEqual(testArray,testSplit);

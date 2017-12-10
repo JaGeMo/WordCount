@@ -7,13 +7,18 @@ namespace WordCount
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args )
         {
             var blackList = StopWords.ReadBlackListWords();
 
-            var inputString = UIInput.ReturnStringFromInput();
+            if (args.Length == 0)
+            {
+                args = new string[] { "" };
+            }
 
-            var splitList = SplitString.StringSplitted(inputString);
+            var inputString = UIInput.ProcessInput(args[0]);
+            
+            var splitList = Splitter.SplitString(inputString);
 
             var cleansedList = StopWords.ReturnCleansedString(blackList, splitList);
 

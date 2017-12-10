@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text.RegularExpressions;
 
 namespace WordCount
 {
-    public static class SplitString
+    public static class Splitter
     {
-        public static List<string> StringSplitted(string in_String)
+        
+        public static List<string> SplitString(string in_String)
         {
             List<string> resultList = new List<string>();
             string pattern = @"[A-Za-z0-9]+";

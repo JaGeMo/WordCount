@@ -1,19 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace WordCount
 {
     public static class UIInput
     {
-        private static string result;
-
-        public static string ReturnStringFromInput()
+        public static string ProcessInput(string in_Arg)
         {
-            Console.WriteLine("third try / enter new string to split: ");
-            return result = Console.ReadLine();
+            if (in_Arg == "")
+            {
+                Console.WriteLine("third try / enter new string to split: ");
+                return Console.ReadLine();
+            }
+            else
+            {
+                string[] tmpArray = File.ReadAllLines(in_Arg);
+                return string.Join(" ",tmpArray);
+            }
         }
     }
 

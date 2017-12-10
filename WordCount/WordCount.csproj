@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CountStrings.cs" />
-    <Compile Include="SplitString.cs" />
+    <Compile Include="Splitter.cs" />
     <Compile Include="StopWords.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

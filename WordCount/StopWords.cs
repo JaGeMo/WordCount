@@ -10,7 +10,7 @@ public static class StopWords
 
     public static string[] ReadBlackListWords()
     {
-        string path = @"c:\temp\MyTest.txt";
+        string path = @"C:\Temp\Sicherungen\CleanCode\StopWords.txt";
 
         if (File.Exists(path))
         {
