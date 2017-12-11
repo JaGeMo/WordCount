@@ -11,7 +11,7 @@ namespace WordCount
         {
             if (in_Arg == "")
             {
-                Console.WriteLine("third try / enter new string to split: ");
+                Console.WriteLine("enter a new string to split: ");
                 return Console.ReadLine();
             }
             else
